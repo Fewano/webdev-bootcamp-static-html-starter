@@ -15,10 +15,35 @@
   </head>
   <body class="bg-wd-black">
 
+    <!-- Header -->
+    <div class="flex items-center justify-between w-full p-6 bg-wd-darkgrey">
+      <section class="flex gap-6">
+        <div class="text-white">
+          Home
+        </div>
+
+        <div class="text-white">
+          Blog
+        </div>
+
+        <div class="text-white">
+          Contact
+        </div>
+      </section>
+
+      <form>
+        <select name="sort" id="sorts" class="py-[14px] text-[#010101]">
+          <option value="sort">English</option>
+          <option value="title">Thai</option>
+        </select>
+      </form>
+    </div>
+
     <header class="h-[400px] w-full flex flex-col justify-center items-center gap-4 bg-hero-pattern bg-center bg-cover bg-no-repeat">
       <h1 class="text-primary font-bold text-5xl text-center">WEB DEVLOPMENT <br /> BOOTCAMP</h1>
       <h2 class="text-primary font-medium text-[32px]">MY PHOTO GALLERY</h2>
     </header>
+
    
     <main class="px-8 flex flex-col">
 
@@ -63,25 +88,21 @@
         Blogs
       </div>
       
-
       <section class="flex flex-col items-center justify-center w-full text-white gap-6">
-        <div class="flex items-center justify-between w-full">
-          <form onsubmit="onSubmit(event)">
-            <input 
-              type="email" 
-              name="myemail" 
-              placeholder="Search Blog..." 
-              class="py-[14px] pl-4 w-full text-[#010101]"
-            />
-          </form>
-          <form>
-            <select name="sort" id="sorts" class="py-[14px] pl-4  text-[#010101]">
-              <option value="sort">Sort</option>
-              <option value="title">Saab</option>
-              <option value="date">Mercedes</option>
-            </select>
-          </form>
-        </div>
+        <form class="flex gap-6 w-full">
+          <input 
+            type="email" 
+            name="myemail" 
+            placeholder="Search Blog..." 
+            class="py-[14px] pl-4 w-full text-[#010101]"
+          />
+
+          <select name="sort" id="sorts" class="py-[14px] text-[#010101]">
+            <option value="sort">Sort</option>
+            <option value="title">Saab</option>
+            <option value="date">Mercedes</option>
+          </select>
+        </form>
   
         <div class="flex gap-6 w-full">
           <img src="../assets/features/image-bootcamp-feature-1.png" alt=""/>
@@ -159,10 +180,55 @@
         </div>
 
       </section>
+
+      <!--Section Contact us-->
+      <div class="w-full text-primary text-4xl font-semibold flex items-center justify-center gap-10 my-12" 
+      > 
+        Contact Us
+      </div>
+    
+      <section class="flex flex-col items-center justify-center w-full text-white gap-6">
+        <form class="flex flex-col gap-4 w-1/2">
+          <div>
+            <label>First Name</label>
+            <input 
+              type="text" 
+              name="name" 
+              placeholder="Enter your first name" 
+              class="py-[14px] pl-4 mt-2 w-full text-[#010101]"
+            />
+          </div>
+
+          <div>
+            <label>Last Name</label>
+            <input 
+              type="text" 
+              name="lastname" 
+              placeholder="Enter your last name" 
+              class="py-[14px] pl-4 mt-2 w-full text-[#010101]"
+            />
+          </div>
+
+          <div>
+            <label>Email</label>
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="Enter your email" 
+              class="py-[14px] pl-4 mt-2 w-full text-[#010101]"
+            />
+          </div>
+
+          <button type="submit" class="bg-primary text-[#010101] px-[33px] py-3 w-full items-center justify-center" onclick="email()">
+            Submit
+          </button>
+
+        </form>
+      </section>
     </main>
 
     <!--Section Footer-->
-    <footer class="flex flex-col text-white justify-center w-full px-8">
+    <footer class="flex flex-col text-white justify-center w-full px-8 my-12">
       <!--Footer 1-->
       <section class="flex justify-between">
         <div class="flex flex-col gap-6 w-2/6">
@@ -243,7 +309,7 @@
       } else {
         slideNumber = n;
       }
-      console.log(slideNumber);
+      //console.log(slideNumber);
 
       for (let i = 0; i < imageSlides.length; i++) {
         imageSlides[i].style.display = "none";
